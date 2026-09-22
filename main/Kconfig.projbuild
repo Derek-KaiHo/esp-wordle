@@ -1,0 +1,17 @@
+menu "Wordle Game"
+
+    choice WORDLE_ROLE
+        prompt "Board role"
+        default WORDLE_ROLE_HOST
+        help
+            Host runs a WiFi access point and TCP server.
+            Joiner connects to the host's WiFi and TCP server.
+
+        config WORDLE_ROLE_HOST
+            bool "Host (WiFi AP + TCP server)"
+
+        config WORDLE_ROLE_JOIN
+            bool "Joiner (WiFi station + TCP client)"
+    endchoice
+
+endmenu
